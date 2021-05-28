@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <h1>To print particular content</h1>
+    </head>
+    <body>
+        <div id="divOne">
+            Div one content is here.
+          <button onclick = "myFun('divOne')">DivOne</button>
+        </div>
+        <div id="divTwo">
+            Div two content is here.
+          <button onclick = "myFun('divTwo')">DivTwo</button>
+        </div>
+        <div id="divThree">
+            Div three content is here.
+          <button onclick = "myFun('divThree')">DivThree</button>
+        </div>
+        <div id="wholePage">
+        <button onclick = "wholePage()">WholePage</button>
+        </div>
+
+        <script>
+            function wholePage() {
+                window.print();
+            }
+
+            function myFun(paraValue) {
+                var backUp = document.body.innerHTML;
+                var divContent = document.getElementById(paraValue).innerHTML;
+                document.body.innerHTML = divContent;
+                window.print()
+                document.body.innerHTML = backUp;
+            }
+        </script>
+        </br>
+        <!-- To get Date and Time-->
+        <script>
+        var d = new Date();
+        var n = d.getTime();
+        var date = d.getUTCDate();
+        var month = d.getUTCMonth();
+        var year = d.getUTCFullYear();
+        var hour = d.getHours();
+        var minute = d.getMinutes();
+        var second = d.getSeconds();
+        document.write(d);
+        document.write("<br>");
+        document.write(date);
+        document.write("<br>");
+        document.write(month);
+        document.write("<br>");
+        document.write(year);
+        document.write("<br>");
+        document.write(year + "/" + month + "/" + date)
+        document.write("<br>");
+        document.write(hour + ":" + minute + ":" + second );
+        </script>
+    </body>
+</html>
